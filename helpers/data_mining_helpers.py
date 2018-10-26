@@ -32,6 +32,13 @@ def check_missing_values(row):
             counter+=1
     return ("The amoung of missing records is: ", counter)
 
+def check_missing_values_2(df):
+    comment_null = df['comment'].isnull().sum()
+    label_null = df['label'].isnull().sum()
+    print('comment:', comment_null)
+    print('label:', label_null)
+    
+    
 def tokenize_text(text, remove_stopwords=False):
     """
     Tokenize text using the nltk library
